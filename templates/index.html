@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JARVIS Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+  </head>
+  <body>
+    <div class="hud-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-dot"></div>
+          <div>
+            <p class="eyebrow">Sistema</p>
+            <h1 id="appName">JARVIS</h1>
+          </div>
+        </div>
+
+        <div class="status-card">
+          <span class="label">Estado</span>
+          <strong id="statusText">Conectando...</strong>
+        </div>
+
+        <div class="status-card">
+          <span class="label">Modelo</span>
+          <strong id="modelText">--</strong>
+        </div>
+
+        <button id="microphoneBtn" class="action-btn secondary" type="button">
+          🎙️ Activar micrófono
+        </button>
+      </aside>
+
+      <main class="chat-panel">
+        <header class="chat-header">
+          <div>
+            <p class="eyebrow">Asistente personal</p>
+            <h2>JARVIS IA</h2>
+          </div>
+        </header>
+
+        <div id="chatMessages" class="chat-messages" aria-live="polite">
+          <div class="message bot">
+            <div class="bubble">Buenos días. JARVIS en línea. ¿En qué puedo ayudarte?</div>
+          </div>
+        </div>
+
+        <form id="chatForm" class="chat-form">
+          <textarea id="messageInput" rows="1" placeholder="Escribe tu orden o pregunta..."></textarea>
+          <div class="tools">
+            <button type="button" id="speakBtn" class="action-btn">🔊 Reproducir respuesta</button>
+            <button type="submit" class="action-btn primary">Enviar</button>
+          </div>
+        </form>
+      </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </body>
+</html>
